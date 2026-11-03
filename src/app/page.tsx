@@ -14,6 +14,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import EmergencyStickyBar from "@/components/EmergencyStickyBar";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +57,9 @@ export default function Home() {
 
       {/* Mobile-only Sticky Call & Booking Bar */}
       <EmergencyStickyBar onOpenBooking={handleOpenBooking} />
+
+      {/* 24/7 AI Chatbot with Sticky Call, WhatsApp & Book Buttons */}
+      <Chatbot onOpenBooking={handleOpenBooking} />
     </div>
   );
 }
