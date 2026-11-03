@@ -90,45 +90,45 @@ export default function AboutUs({ onOpenBooking }: AboutUsProps) {
             </div>
           </div>
 
-          {/* Right Column: 4 Stat Cards Stack with #155dfc matching mockup */}
-          <div className="lg:col-span-3 space-y-4">
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4 hover:border-[#155dfc] transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
-                <Award className="w-6 h-6" />
+          {/* Right Column: 4 Stat Cards Stack with #155dfc matching mockup - Mobile 2x2 grid */}
+          <div className="lg:col-span-3 grid grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5 sm:gap-4 hover:border-[#155dfc] transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
+                <Award className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <p className="text-2xl font-black text-slate-900 leading-tight">20+</p>
-                <p className="text-xs text-slate-500 font-medium">Years Experience</p>
+                <p className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">20+</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Years Experience</p>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4 hover:border-[#155dfc] transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
-                <UserCheck className="w-6 h-6" />
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5 sm:gap-4 hover:border-[#155dfc] transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
+                <UserCheck className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <p className="text-2xl font-black text-slate-900 leading-tight">100%</p>
-                <p className="text-xs text-slate-500 font-medium">Direct with Trevor</p>
+                <p className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">100%</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Direct with Trevor</p>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4 hover:border-[#155dfc] transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
-                <ThumbsUp className="w-6 h-6" />
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5 sm:gap-4 hover:border-[#155dfc] transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
+                <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <p className="text-2xl font-black text-slate-900 leading-tight">5.0★</p>
-                <p className="text-xs text-slate-500 font-medium">Community Reviews</p>
+                <p className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">5.0★</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Community Reviews</p>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4 hover:border-[#155dfc] transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
-                <Clock className="w-6 h-6" />
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5 sm:gap-4 hover:border-[#155dfc] transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#155dfc]/10 text-[#155dfc] flex items-center justify-center shrink-0">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <p className="text-2xl font-black text-slate-900 leading-tight">24/7</p>
-                <p className="text-xs text-slate-500 font-medium">Emergency Response</p>
+                <p className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">24/7</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 font-medium">Emergency Help</p>
               </div>
             </div>
           </div>

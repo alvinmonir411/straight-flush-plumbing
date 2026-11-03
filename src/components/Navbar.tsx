@@ -14,26 +14,26 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
   return (
     <>
       {/* Top emergency announcement bar matching red & black branding */}
-      <div className="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-red-950/60">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <div className="flex items-center gap-3">
+      <div className="bg-slate-950 text-slate-300 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-red-950/60">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2 text-center sm:text-left">
+          <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 flex-wrap">
             <span className="inline-flex items-center gap-1.5 text-red-400 font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              24/7 Emergency Dispatch • North Brisbane & Redcliffe Peninsula
+              24/7 Emergency Dispatch
             </span>
-            <span className="hidden md:inline text-slate-700">|</span>
-            <span className="hidden md:inline text-slate-400 font-medium">
-              Deal Directly with Trevor • QBCC: 15092668
+            <span className="text-slate-600">•</span>
+            <span className="text-slate-300 font-medium">
+              North Brisbane &amp; Redcliffe Peninsula
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline text-slate-400 text-[11px]">
-              Mon–Sun: 6am–4pm (24/7 Emergencies)
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <span className="hidden md:inline text-slate-400 text-[11px]">
+              QBCC: 15092668
             </span>
             <a
               href="tel:0448899780"
-              className="text-amber-400 font-extrabold hover:text-amber-300 flex items-center gap-1.5 transition-colors tracking-tight text-sm"
+              className="text-amber-400 font-extrabold hover:text-amber-300 flex items-center gap-1.5 transition-colors tracking-tight text-xs sm:text-sm"
             >
               <Phone className="w-3.5 h-3.5 text-amber-400" />
               0448 899 780
@@ -44,11 +44,11 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Main Sticky Navbar */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo from user's uploaded asset */}
-            <a href="#" className="flex items-center py-2 group">
-              <div className="relative h-14 w-56 sm:w-64">
+            <a href="#" className="flex items-center py-1 group">
+              <div className="relative h-11 w-44 xs:w-48 sm:h-14 sm:w-60">
                 <Image
                   src="/logo.png"
                   alt="Straight Flush Plumbing Solutions"

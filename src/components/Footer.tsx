@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail, Clock, ShieldCheck, ArrowRight } from "lucide-reac
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
+    <footer id="contact" className="bg-slate-950 text-slate-300 pt-12 sm:pt-16 pb-24 md:pb-12 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Columns */}

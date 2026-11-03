@@ -28,13 +28,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm animate-fadeIn">
+      <div className="relative w-full max-w-lg max-h-[92vh] flex flex-col bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100">
         {/* Header matching red & black brand */}
-        <div className="bg-gradient-to-r from-red-700 via-red-600 to-slate-900 px-6 py-5 text-white flex items-center justify-between">
+        <div className="bg-gradient-to-r from-red-700 via-red-600 to-slate-900 px-5 sm:px-6 py-4 sm:py-5 text-white flex items-center justify-between shrink-0">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-300">Direct to Trevor</span>
-            <h3 className="text-xl font-bold">Request a Quote or Service</h3>
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">Direct to Trevor</span>
+            <h3 className="text-lg sm:text-xl font-bold">Request a Quote or Service</h3>
           </div>
           <button
             onClick={onClose}
@@ -45,8 +45,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6">
+        {/* Content with smooth scrolling for small screens */}
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
           {submitted ? (
             <div className="py-8 text-center space-y-4">
               <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto">

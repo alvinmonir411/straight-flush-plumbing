@@ -9,7 +9,7 @@ interface EmergencyStickyBarProps {
 
 export default function EmergencyStickyBar({ onOpenBooking }: EmergencyStickyBarProps) {
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-red-950 px-3 py-2.5 shadow-2xl flex items-center gap-2">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-red-950/80 px-3 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-2xl flex items-center gap-2">
       <a
         href="tel:0448899780"
         className="flex-1 py-2.5 px-3 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-extrabold rounded-xl text-center text-xs flex items-center justify-center gap-2 shadow-md cursor-pointer"

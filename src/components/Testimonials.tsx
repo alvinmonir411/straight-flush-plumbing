@@ -53,41 +53,48 @@ const reviews = [
 ];
 
 export default function Testimonials() {
-  const [startIndex, setStartIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const prev = () => {
-    setStartIndex((prev) => (prev === 0 ? reviews.length - 3 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
   };
 
   const next = () => {
-    setStartIndex((prev) => (prev >= reviews.length - 3 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
   };
 
-  const displayedReviews = reviews.slice(startIndex, startIndex + 3);
+  // Get 3 items starting from currentIndex, wrapping around
+  const visibleReviews = [
+    reviews[currentIndex],
+    reviews[(currentIndex + 1) % reviews.length],
+    reviews[(currentIndex + 2) % reviews.length],
+  ];
 
   return (
-    <section id="testimonials" className="py-20 bg-slate-50/70 border-b border-slate-200/60">
+    <section id="testimonials" className="py-14 sm:py-20 bg-slate-50/70 border-b border-slate-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header matching mockup */}
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div className="text-center max-w-2xl mx-auto space-y-3 mb-10 sm:mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#155dfc] bg-[#155dfc]/10 px-3.5 py-1.5 rounded-full inline-block">
             Testimonials
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             What Our <span className="text-[#155dfc]">Customers Say</span>
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
+          <p className="text-xs sm:text-sm md:text-base text-slate-600">
             Real feedback from Brisbane and Redcliffe Peninsula locals who rely on Trevor for honest plumbing.
           </p>
         </div>
 
-        {/* 3 Review Cards Grid matching mockup */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {displayedReviews.map((review) => (
+        {/* Responsive Review Cards: 1 on mobile, 2 on tablet, 3 on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {visibleReviews.map((review, i) => (
             <div
-              key={review.name}
-              className="bg-white rounded-2xl p-6 border border-slate-200/90 hover:border-red-300 hover:shadow-xl transition-all flex flex-col justify-between"
+              key={`${review.name}-${i}`}
+              className={`bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 hover:border-red-300 hover:shadow-xl transition-all justify-between ${
+                i === 0 ? "flex flex-col" : i === 1 ? "hidden sm:flex flex-col" : "hidden lg:flex flex-col"
+              }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -99,14 +106,14 @@ export default function Testimonials() {
                   <Quote className="w-6 h-6 text-[#155dfc]/30" />
                 </div>
 
-                <p className="text-sm text-slate-700 leading-relaxed italic mb-6">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6">
                   &ldquo;{review.comment}&rdquo;
                 </p>
               </div>
 
               {/* Author row with unique circular avatar matching mockup */}
               <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[#155dfc]/30 shadow-xs shrink-0">
+                <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-[#155dfc]/30 shadow-xs shrink-0">
                   <Image
                     src={review.avatar}
                     alt={review.name}
@@ -117,10 +124,10 @@ export default function Testimonials() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <h4 className="font-extrabold text-slate-900 text-sm truncate leading-snug">{review.name}</h4>
+                    <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm truncate leading-snug">{review.name}</h4>
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                   </div>
-                  <p className="text-xs text-slate-500 truncate">{review.suburb}</p>
+                  <p className="text-[11px] sm:text-xs text-slate-500 truncate">{review.suburb}</p>
                 </div>
                 <span className="text-[10px] font-bold text-red-700 bg-red-50 px-2 py-0.5 rounded-full shrink-0">
                   {review.role}
@@ -131,7 +138,7 @@ export default function Testimonials() {
         </div>
 
         {/* Slider Controls */}
-        <div className="mt-10 flex items-center justify-center gap-3">
+        <div className="mt-8 sm:mt-10 flex items-center justify-center gap-3">
           <button
             onClick={prev}
             aria-label="Previous reviews"
@@ -142,10 +149,12 @@ export default function Testimonials() {
           
           <div className="flex gap-1.5 items-center px-2">
             {reviews.map((_, i) => (
-              <span
+              <button
                 key={i}
-                className={`h-2 rounded-full transition-all ${
-                  i === startIndex ? "w-6 bg-[#155dfc]" : "w-2 bg-slate-300"
+                onClick={() => setCurrentIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  i === currentIndex ? "w-6 bg-[#155dfc]" : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}
