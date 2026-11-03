@@ -21,13 +21,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           {/* Left Column (Content) */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
             
-            {/* Top pill badge */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-blue-50 border border-[#155dfc]/30 text-[#155dfc] text-[11px] sm:text-xs font-bold tracking-wide">
+            {/* Top pill badge - Single clean line on all mobile screens */}
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-50 border border-[#155dfc]/30 text-[#155dfc] text-[11px] sm:text-xs font-bold whitespace-nowrap">
               <span>Practical Advice</span>
               <span className="text-[#155dfc]/50">•</span>
               <span>Upfront Pricing</span>
-              <span className="text-[#155dfc]/50">•</span>
-              <span>Direct with Trevor</span>
+              <span className="hidden sm:inline text-[#155dfc]/50">•</span>
+              <span className="hidden sm:inline">Deal Directly With Trevor</span>
             </div>
 
             {/* Main Headline */}
@@ -122,7 +122,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Right Column (High Quality Plumber In-Action matching mockup) */}
-          <div className="lg:col-span-5 relative flex justify-center mt-4 sm:mt-6 lg:mt-0">
+          <div className="lg:col-span-5 relative flex justify-center mt-6 sm:mt-8 lg:mt-0 pb-10 sm:pb-8">
             
             <div className="w-full max-w-sm sm:max-w-md aspect-4/5 relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 group">
               <Image
@@ -134,20 +134,17 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 sizes="(max-width: 768px) 100vw, 500px"
               />
 
-              {/* Gradient overlay for contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-4 left-4 right-4 sm:left-5 sm:right-5 text-white">
-                <span className="inline-block px-2.5 py-0.5 rounded-full bg-red-600 text-[10px] font-black uppercase tracking-wider mb-1">
+              {/* Top pill badge cleanly positioned with zero overlap */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold shadow-md">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   On-Duty Across Brisbane
                 </span>
-                <p className="text-sm sm:text-base font-extrabold leading-tight">Master Plumber &amp; Gasfitter</p>
-                <p className="text-[11px] sm:text-xs text-slate-300">Fast arrival with fully equipped mobile service unit</p>
               </div>
             </div>
 
-            {/* Floating Emergency Card matching Crimson & Black branding - Fully Responsive */}
-            <div className="absolute -bottom-8 sm:-bottom-8 left-4 right-4 sm:left-auto sm:-right-4 bg-slate-950 text-white p-4 sm:p-5 rounded-2xl shadow-2xl border-2 border-red-600 sm:max-w-xs">
+            {/* Floating Emergency Card matching Crimson & Black branding - Sits cleanly at bottom without colliding */}
+            <div className="absolute -bottom-4 sm:-bottom-6 left-4 right-4 sm:left-auto sm:-right-4 bg-slate-950 text-white p-4 sm:p-5 rounded-2xl shadow-2xl border-2 border-red-600 sm:max-w-xs z-20">
               <p className="text-[10px] sm:text-xs font-bold text-red-400 uppercase tracking-wider">
                 Urgent Plumbing Help?
               </p>

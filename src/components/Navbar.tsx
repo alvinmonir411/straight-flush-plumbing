@@ -13,30 +13,30 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
   return (
     <>
-      {/* Top emergency announcement bar matching red & black branding */}
-      <div className="bg-slate-950 text-slate-300 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-red-950/60">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2 text-center sm:text-left">
-          <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 text-red-400 font-semibold tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              24/7 Emergency Dispatch
+      {/* Top emergency announcement bar - Safe Area & Single-line on mobile */}
+      <div className="bg-slate-950 text-slate-300 text-[11px] sm:text-xs pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 px-3 sm:px-4 border-b border-red-950/60">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 truncate">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shrink-0"></span>
+            <span className="text-red-400 font-bold tracking-tight truncate">
+              24/7 Emergency Service
             </span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-300 font-medium">
+            <span className="hidden sm:inline text-slate-600">•</span>
+            <span className="hidden sm:inline text-slate-300 font-medium truncate">
               North Brisbane &amp; Redcliffe Peninsula
             </span>
           </div>
 
-          <div className="flex items-center justify-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-3 shrink-0">
             <span className="hidden md:inline text-slate-400 text-[11px]">
               QBCC: 15092668
             </span>
             <a
               href="tel:0448899780"
-              className="text-amber-400 font-extrabold hover:text-amber-300 flex items-center gap-1.5 transition-colors tracking-tight text-xs sm:text-sm"
+              className="text-amber-400 font-black hover:text-amber-300 flex items-center gap-1.5 transition-colors tracking-tight text-xs sm:text-sm bg-white/10 sm:bg-transparent px-2.5 sm:px-0 py-1 sm:py-0 rounded-full cursor-pointer"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
-              0448 899 780
+              <Phone className="w-3 h-3 text-amber-400 shrink-0" />
+              <span>0448 899 780</span>
             </a>
           </div>
         </div>

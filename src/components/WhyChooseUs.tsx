@@ -62,21 +62,21 @@ export default function WhyChooseUs() {
               </div>
             </div>
 
-            {/* Right Visual: Banner / Image from sflush.com.au */}
-            <div className="lg:col-span-5 relative flex justify-center">
+            {/* Right Visual: Banner / Image from sflush.com.au - Face completely uncovered */}
+            <div className="lg:col-span-5 relative flex justify-center pb-6 sm:pb-4">
               
-              <div className="relative w-full max-w-sm aspect-4/3 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-800">
+              <div className="relative w-full max-w-xs sm:max-w-sm aspect-square sm:aspect-4/3 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-800">
                 <Image
                   src="/banner.jpg"
                   alt="Straight Flush High Performance Plumbing"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>
 
-              {/* Hand-drawn style badge annotation matching mockup */}
-              <div className="absolute -top-4 -right-2 sm:right-2 bg-amber-400 text-slate-950 px-4 py-2 rounded-2xl font-black text-xs shadow-xl transform rotate-3 flex items-center gap-1.5 border border-amber-300">
+              {/* Hand-drawn badge positioned at the bottom so it NEVER covers Trevor's face */}
+              <div className="absolute -bottom-2 sm:-bottom-3 right-2 sm:right-6 bg-amber-400 text-slate-950 px-4 py-2 rounded-2xl font-black text-xs sm:text-sm shadow-xl transform -rotate-2 flex items-center gap-1.5 border border-amber-300">
                 <span>♠ Your Local Plumbing Partner!</span>
               </div>
 
