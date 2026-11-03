@@ -20,6 +20,7 @@ export default function Footer() {
                   src="/logo.png"
                   alt="Straight Flush Plumbing Solutions Pty Ltd"
                   fill
+                  sizes="240px"
                   className="object-contain object-left"
                 />
               </div>

@@ -53,6 +53,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                   src="/logo.png"
                   alt="Straight Flush Plumbing Solutions"
                   fill
+                  sizes="(max-width: 640px) 192px, 240px"
                   className="object-contain object-left group-hover:scale-[1.02] transition-transform"
                   priority
                 />
